@@ -1,0 +1,24 @@
+<div class="intro">
+  <label class="title">Please specify who you are:</label>
+  <input type="text" class="name" maxlength="10" [(ngModel)]="user">
+</div>
+<section class="msg-section" *ngIf="msgList.length > 0">
+  <div class="msg-wrapper" *ngFor="let data of msgList"
+  [ngClass]="{
+    'me': data.sender === user
+  }">
+  <span class="sender" *ngIf="data.sender === user;else other">Me:</span>
+  <ng-template #other>
+    <span class="sender">{{ data.sender }}:</span>
+  </ng-template>
+  <span class="msg">{{ data.msg }}</span>
+  </div>
+</section>
+
+<form class="input-form" [formGroup]="msgForm" (ngSubmit)="sendMsg()">
+  <div class="input-wrapper">
+    <textarea formControlName="message"cols="30" rows="5" class="text-area"></textarea>
+    <button type="submit">Send message</button>
+  </div>
+</form>
+<router-outlet></router-outlet>

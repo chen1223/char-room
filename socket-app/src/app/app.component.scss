@@ -1,0 +1,43 @@
+.intro {
+  margin-bottom: 2em;
+  label {
+    margin-right: 1em;
+  }
+}
+.msg-section {
+  width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.msg-wrapper {
+  margin: .5em 0;
+  padding: 0 1em;
+  .sender {
+    display: block;
+    margin-bottom: .25em;
+    font-size: 1em;
+    color: #616161;
+  }
+  &.me {
+    text-align: right;
+    .sender {
+      display: none;
+    }
+  }
+  .msg {
+    font-size: 1.05em;
+  }
+}
+.input-form {
+  margin-top: 2em;
+}
+.input-wrapper {
+  display: flex;
+  align-items: flex-start;
+  textarea {
+    resize: none;
+  }
+  button {
+    margin-left: 1em;
+  }
+}
